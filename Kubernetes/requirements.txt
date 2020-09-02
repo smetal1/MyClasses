@@ -1,0 +1,1 @@
+1. Local minikube setup or enable kubernetes in docker for mac
