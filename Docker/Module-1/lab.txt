@@ -1,0 +1,54 @@
+1. To demonstrate the ephimeral characteristics of docker.
+    * Run a container using the following command:
+    docker run -it ubuntu
+
+    => create a file using:
+    echo "Hello world">> test.log
+
+    * Exit from the container
+        CTRl + Z or Command + Z
+
+    * Again execute 
+    docker run -it ubuntu
+
+Try looking for test.log.
+
+
+2. Docker local volume
+
+    * on the docker execute create a file
+    echo "Hello World" >> test.log
+
+    * Run the container using the following command (local volume is mounted)
+    docker run -it --name=james -v ~/test.log:/log/ -d ubuntu
+
+    * Enter inside the container
+    docker exec -it james /bin/bash
+
+    * Try viewing the file /log
+    cat /log
+
+    Observation ??
+    * Now add new line in the "log" file inside the container
+        echo "I have updated this line from container" >> log
+    * Type "exit" in the container shell and come to the  host shell 
+
+    * Now check the content of the file "test.log" present in docker host
+    
+    Observation ??
+3. Docker Bind
+
+    * docker run -it --name container1 -d ubuntu
+    * docker run -it --name conatiner2 --link container1 -d ubuntu
+
+    ** install iputils-ping package and try doing a ping
+
+
+-------------------------------- DOCKER SWARM ---------------------------    
+1. You can use play with docker to get a SWARM cluster for this lab
+
+2. Install wordpress stack using the wp_stack.yaml file
+    docker stack deploy -c stack.yml myapp_yara
+
+3. Install Portainer to view your cluster status using portainer_agent-stack.yaml
+    docker stack deploy --compose-file=portainer-agent-stack.yml portainer

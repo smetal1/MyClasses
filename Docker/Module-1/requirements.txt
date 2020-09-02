@@ -1,0 +1,14 @@
+The followings are the requirements (either follow PART A or PART B or PART C):
+PART A (Preferred for LAB):
+1. Create dockerhub account
+2. Use Play with docker environment for training (do not use production data or credentials here)
+
+PART B:
+1. Create dockerhub account
+2. Install docker in your local machine
+    * For mac and linux: curl -fsSL https://get.docker.com -o get-docker.sh && chmod +x get-docker.sh && sh get-docker.sh
+    * For windows: use docker for windows
+
+PART C:
+1. Create dockerhub account
+2. Install docker in cloud instance or use docker droplet in digitalocean

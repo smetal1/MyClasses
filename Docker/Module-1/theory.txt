@@ -1,0 +1,21 @@
+TOPICS:
+
+1. Motivation for using docker.
+
+2. Characteristics of docker and precautions that should be taken while using docker.
+
+3. Run a sample docker application and discuss basic commands.
+
+4. How to use private/public docker registry - tag,pull,push,commit operations
+
+5. Discuss dockerfile and dockerize a sample node js microservice
+
+6. Various usecases where docker can be used.
+
+7. Overview of docker networks and scenarios where to use it.
+
+    * Bridge => default network. it is used when application runs in standalone mode
+    * Host=> Suppose you want to run your container in host network 
+    * Overlay => overlay network connect multiple docker daemons and enable docker swarm services to communicate -OR- two different swarm services -OR- swarm and standalone containers -OR- two different standalone conatiners
+    * macvlan => It assigns Mac address to a container
+    * none => When no networking is enabled in a conatiner. Its not available in docker swarm
